@@ -1,240 +1,173 @@
 # Zeno Skills 集合
 
-本仓库收集整理了 OpenClaw/Claude Code 使用的所有 Agent Skills，按功能分类管理。
+本仓库收集整理了 OpenClaw/Claude Code 使用的所有 Agent Skills，包含实际的 Skill 文件和文档。
 
 ## 📊 Skills 统计
 
-| 来源 | 数量 | 说明 |
-|------|------|------|
-| 全局 npm 安装 | 51 | OpenClaw 官方提供的 Skills |
-| 本地 Workspace | 22 | 自定义/第三方 Skills |
-| ~/.openclaw/skills | 3 | 用户本地 Skills |
-| **总计** | **76** | - |
+| 来源 | 数量 | 路径 | 说明 |
+|------|------|------|------|
+| 全局 npm 安装 | 52 | `skills/npm/` | OpenClaw 官方 Skills |
+| 本地 Workspace | 16 | `skills/local/` | 自定义/第三方 Skills |
+| 用户本地 | 3 | `skills/user/` | 用户本地 Skills |
+| **总计** | **71** | - | - |
 
 ---
 
-## 📂 分类目录
+## 📂 仓库结构
 
-### 1. 📱 苹果生态 (Apple Ecosystem)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [apple-notes](./apple-notes) | Apple Notes 笔记操作 | npm |
-| [apple-reminders](./apple-reminders) | Apple 提醒事项管理 | npm |
-| [bear-notes](./bear-notes) | Bear 笔记应用 | npm |
-| [imsg](./imsg) | iMessage 消息发送 | npm |
-| [things-mac](./things-mac) | Things 任务管理 | npm |
-
----
-
-### 2. 💬 通讯协作 (Communication)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [discord](./discord) | Discord 机器人操作 | npm |
-| [slack](./slack) | Slack 集成 | npm |
-| [bluebubbles](./bluebubbles) | BlueBubbles 消息 | npm |
-| [wacli](./wacli) | WhatsApp CLI | npm |
-| [voice-call](./voice-call) | 语音通话 | npm |
+```
+zeno-skills/
+├── README.md                 # 本文件
+├── INDEX.md                  # 完整索引（按字母排序）
+├── GUIDE.md                  # 使用指南
+├── .gitignore               # Git 忽略规则
+├── npm-skills/              # npm Skills 文档
+├── local-skills/            # 本地 Skills 文档
+├── skills-docs/             # 额外 Skill 文档
+└── skills/                  # ⭐ 实际的 Skill 文件
+    ├── npm/                 # 52 个 npm 安装的 skills
+    ├── local/               # 16 个本地 workspace skills
+    └── user/                # 3 个用户本地 skills
+```
 
 ---
 
-### 3. 🎵 媒体娱乐 (Media & Entertainment)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [spotify-player](./spotify-player) | Spotify 播放器控制 | npm |
-| [sonoscli](./sonoscli) | Sonos 音响控制 | npm |
-| [songsee](./songsee) | 音乐相关操作 | npm |
-| [gifgrep](./gifgrep) | GIF 搜索 | npm |
-| [video-frames](./video-frames) | 视频帧提取 | npm |
-
----
-
-### 4. 🤖 AI/ML 与语音 (AI & Voice)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [gemini](./gemini) | Google Gemini AI 集成 | npm |
-| [openai-image-gen](./openai-image-gen) | OpenAI 图像生成 | npm |
-| [openai-whisper](./openai-whisper) | 本地 Whisper 语音识别 | npm |
-| [openai-whisper-api](./openai-whisper-api) | Whisper API | npm |
-| [sherpa-onnx-tts](./sherpa-onnx-tts) | TTS 语音合成 | npm |
-| [sag](./sag) | ElevenLabs TTS 语音讲述 | npm |
-| [summarize](./summarize) | 文本摘要 | npm |
-
----
-
-### 5. ☁️ 云与笔记 (Cloud & Notes)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [notion](./notion) | Notion 文档操作 | npm |
-| [obsidian](./obsidian) | Obsidian 笔记管理 | npm |
-| [oracle](./oracle) | Oracle 数据库 | npm |
-| [himalaya](./himalaya) | Himalaya CLI 邮件 | npm |
-| [trello](./trello) | Trello 看板 | npm |
-
----
-
-### 6. 🏠 智能家居 (Smart Home)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [openhue](./openhue) | Philips Hue 灯光控制 | npm |
-| [blucli](./blucli) | 蓝牙控制 | npm |
-| [camsnap](./camsnap) | 相机快照 | npm |
-| [peekaboo](./peekaboo) | 设备预览 | npm |
-| [eightctl](./eightctl) | 设备控制 | npm |
-
----
-
-### 7. 🛠️ 开发工具 (Development Tools)
-
-#### 7.1 代码协作
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [github](./github) | GitHub 操作 (gh CLI) | npm |
-| [gh-issues](./gh-issues) | GitHub Issue 自动修复 | npm |
-| [coding-agent](./coding-agent) | 编码代理 | npm |
-
-#### 7.2 开发辅助
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [clawhub](./clawhub) | ClawHub 技能商店 | npm |
-| [skill-creator](./skill-creator) | Skill 创建工具 | npm |
-| [mcporter](./mcporter) | MCP 服务器管理 | npm |
-| [tmux](./tmux) | tmux 会话远程控制 | npm |
-| [canvas](./canvas) | Canvas 操作 | npm |
-
----
-
-### 8. 🔒 安全工具 (Security)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [1password](./1password) | 1Password 密码管理 | npm |
-| [healthcheck](./healthcheck) | 主机安全加固检查 | npm |
-
----
-
-### 9. 🐧 Deepin/Linux 专用
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [deepin-os-version-update](./deepin-os-version-update) | Deepin OS 版本更新 | local |
-| [debian-pkg-query](./debian-pkg-query) | Debian 包查询 | local |
-| [cve-patching](./cve-patching) | CVE 漏洞修补工作流 | local |
-| [cve-scan](./cve-scan) | CVE 扫描 | local |
-| [deepin-cve-fixer](./deepin-cve-fixer) | Deepin CVE 修复 | local |
-
----
-
-### 10. 🛡️ 安全审计 (Security Audit)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [agent-bom](./agent-bom) | AI 供应链安全扫描 | local |
-| [dependency-auditor](./dependency-auditor) | 依赖审计 | local |
-
----
-
-### 11. 📄 文档处理 (Document Processing)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [docx](./docx) | Word 文档操作 | local |
-| [excel-xlsx](./excel-xlsx) | Excel 文件处理 | local |
-| [office](./office) | Office 套件集成 | local |
-
----
-
-### 12. 🔍 搜索 (Search)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [multi-search-engine](./multi-search-engine) | 多引擎搜索 | local |
-| [baidu-search](./baidu-search) | 百度搜索 | local |
-
----
-
-### 13. 🤖 智能代理 (AI Agents)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [proactive-agent](./proactive-agent) | 主动型代理框架 | local |
-| [agent-team-kit](./agent-team-kit) | 代理团队协作 | local |
-| [self-improving-agent](./self-improving-agent) | 自我改进代理 | local |
-
----
-
-### 14. 🌐 其他工具 (Others)
-
-| Skill | 说明 | 来源 |
-|-------|------|------|
-| [weather](./weather) | 天气查询 | npm |
-| [xurl](./xurl) | URL 工具 | npm |
-| [goplaces](./goplaces) | 位置管理 | npm |
-| [blogwatcher](./blogwatcher) | 博客监控 | npm |
-| [gog](./gog) | GOG 游戏平台 | npm |
-| [ordercli](./ordercli) | 订单管理 CLI | npm |
-| [nano-pdf](./nano-pdf) | PDF 处理 | npm |
-| [nano-banana-pro](./nano-banana-pro) | Banana Pro | npm |
-| [model-usage](./model-usage) | 模型使用统计 | npm |
-| [session-logs](./session-logs) | 会话日志 | npm |
-| [find-skills](./find-skills) | Skill 发现与安装 | local |
-| [jenkins-crp-to-xlsx](./jenkins-crp-to-xlsx) | Jenkins CRP 转 Excel | local |
-
----
-
-## 🚀 快速开始
+## 🚀 快速使用
 
 ### 安装 Skill
 
-```bash
-# 通过 npx 安装
-npx skills add <skill-name>
+将本仓库的 skill 复制到你的 OpenClaw skills 目录：
 
-# 通过 ClawHub 搜索
-npx skills find <keyword>
+```bash
+# 克隆仓库
+git clone https://github.com/Zeno-sole/zeno-skills.git
+
+# 复制特定 skill
+cp -r zeno-skills/skills/npm/weather ~/.openclaw/skills/
+cp -r zeno-skills/skills/local/jenkins-crp-to-xlsx ~/.openclaw/skills/
+
+# 或者复制所有 user skills
+cp -r zeno-skills/skills/user/* ~/.openclaw/skills/
 ```
 
-### 本地 Skill 路径
+### 通过 ClawHub 安装
 
-| 路径 | 说明 |
-|------|------|
-| `~/.npm-global/lib/node_modules/openclaw/skills/` | 全局 npm Skills |
-| `~/clawd/skills/` | Workspace Skills |
-| `~/.openclaw/skills/` | 用户本地 Skills |
+```bash
+# 搜索 Skills
+npx skills find jenkins
+
+# 安装 Skill
+npx skills add owner/skill@variant
+```
 
 ---
 
-## 📝 使用示例
+## 📂 Skills 目录详解
 
-### 文档生成
+### `skills/npm/` - 全局 npm Skills (52个)
+
+通过 npm 全局安装的 OpenClaw 官方 Skills。
+
+**安装路径**: `~/.npm-global/lib/node_modules/openclaw/skills/`
+
+**主要分类**:
+- 📱 苹果生态: apple-notes, apple-reminders, bear-notes, imsg, things-mac
+- 💬 通讯协作: discord, slack, bluebubbles, wacli, voice-call
+- 🎵 媒体娱乐: spotify-player, sonoscli, songsee, gifgrep, video-frames
+- 🤖 AI/ML: gemini, openai-image-gen, openai-whisper, sag, summarize
+- 🛠️ 开发工具: github, gh-issues, coding-agent, skill-creator, mcporter
+- ☁️ 云与笔记: notion, obsidian, oracle, himalaya, trello
+- 🏠 智能家居: openhue, blucli, camsnap, peekaboo, eightctl
+- 🔒 安全: 1password, healthcheck
+- 🌐 其他: weather, xurl, goplaces, blogwatcher
+
+### `skills/local/` - 本地 Workspace Skills (16个)
+
+自定义开发和第三方 Skills。
+
+**安装路径**: `~/clawd/skills/`
+
+**主要 Skills**:
+- 📄 文档处理: docx, excel-xlsx, office
+- 🔍 搜索: multi-search-engine, baidu-search
+- 🛡️ 安全审计: agent-bom, cve-patching, cve-scan, deepin-cve-fixer, dependency-auditor
+- 🐧 Deepin 专用: deepin-os-version-update, debian-pkg-query
+- 🤖 智能代理: proactive-agent, agent-team-kit
+- 🆕 自定义: jenkins-crp-to-xlsx
+
+### `skills/user/` - 用户本地 Skills (3个)
+
+用户个人安装的 Skills。
+
+**安装路径**: `~/.openclaw/skills/`
+
+| Skill | 说明 |
+|-------|------|
+| find-skills | Skill 发现与安装 |
+| jenkins-crp-to-xlsx | Jenkins CRP 转 Excel |
+| self-improving-agent | 自我改进代理 |
+
+---
+
+## 📋 分类速查
+
+### 文档处理
 ```bash
-# Word 文档
-claude -s docx "创建一份报告"
+claude -s docx "创建 Word 文档"
+claude -s excel-xlsx "创建 Excel 表格"
+claude -s office "Office 综合操作"
+```
 
-# Excel 表格
-claude -s excel-xlsx "生成数据表"
+### 搜索
+```bash
+claude -s multi-search-engine "搜索关键词"
+claude -s baidu-search "百度搜索"
+```
+
+### 安全审计
+```bash
+claude -s agent-bom "生成 SBOM"
+claude -s cve-scan "扫描 CVE"
+claude -s dependency-auditor "审计依赖"
 ```
 
 ### Jenkins 操作
 ```bash
-# CRP 信息转 Excel
 python3 ~/.openclaw/skills/jenkins-crp-to-xlsx/jenkins_crp_to_xlsx.py \
   v25-repo-iso-work/v25-crp_info_collect 173
 ```
 
-### 安全扫描
+### GitHub
 ```bash
-# CVE 扫描
-claude -s cve-scan "扫描仓库 CVE"
-
-# 依赖审计
-claude -s dependency-auditor "检查依赖"
+claude -s github "查看 PR"
+claude -s gh-issues "修复 Issue"
 ```
+
+### 天气
+```bash
+claude -s weather "北京今天天气"
+```
+
+---
+
+## 🛠️ 创建新 Skill
+
+参考 [skill-creator](./skills/npm/skill-creator/) 创建自己的 Skill：
+
+```bash
+python3 skills/npm/skill-creator/scripts/init_skill.py my-skill --path ./skills/user
+```
+
+---
+
+## 📝 文档索引
+
+| 文档 | 说明 |
+|------|------|
+| [INDEX.md](./INDEX.md) | 按字母排序的完整 Skills 索引 |
+| [GUIDE.md](./GUIDE.md) | Skills 使用指南和故障排除 |
+| [npm-skills/README.md](./npm-skills/README.md) | npm Skills 详解 |
+| [local-skills/README.md](./local-skills/README.md) | 本地 Skills 详解 |
 
 ---
 
@@ -246,7 +179,12 @@ claude -s dependency-auditor "检查依赖"
 
 ## 🤝 贡献
 
-欢迎贡献新的 Skills！参考 [skill-creator](./skill-creator) 了解如何创建 Skill。
+欢迎贡献新的 Skills 或改进文档！
+
+1. Fork 本仓库
+2. 添加你的 Skill 到 `skills/user/`
+3. 更新相关文档
+4. 提交 PR
 
 ---
 
